@@ -1,0 +1,101 @@
+{
+  "_from": "angular-ts-decorators",
+  "_id": "angular-ts-decorators@1.2.5",
+  "_inBundle": false,
+  "_integrity": "sha1-eMne0pFHHSHLPTYCzKJhrkpaqqw=",
+  "_location": "/angular-ts-decorators",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "angular-ts-decorators",
+    "name": "angular-ts-decorators",
+    "escapedName": "angular-ts-decorators",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular-ts-decorators/-/angular-ts-decorators-1.2.5.tgz",
+  "_shasum": "78c9ded291471d21cb3d3602cca261ae4a5aaaac",
+  "_spec": "angular-ts-decorators",
+  "_where": "c:\\angular projects\\customtestbundle",
+  "author": {
+    "name": "Vlad Sternbach",
+    "email": "vlad.sternbach@gmail.com",
+    "url": "https://github.com/vsternbach"
+  },
+  "bugs": {
+    "url": "https://github.com/vsternbach/angular-ts-decorators/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "reflect-metadata": "^0.1.10",
+    "tslib": "^1.7.1"
+  },
+  "deprecated": false,
+  "description": "A collection of angular 2 style decorators for angularjs 1.5.x projects written in typescript.",
+  "devDependencies": {
+    "@types/angular": "^1.6.24",
+    "@types/jasmine": "^2.5.43",
+    "@types/node": "^7.0.12",
+    "angular": "^1.6.0",
+    "angular-mocks": "^1.6.3",
+    "copyfiles": "^1.2.0",
+    "coveralls": "^2.13.0",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.5.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-coverage": "^1.1.1",
+    "karma-jasmine": "^1.1.0",
+    "karma-typescript": "^3.0.0",
+    "rimraf": "^2.6.1",
+    "rollup": "^0.41.6",
+    "standard-version": "^4.0.0",
+    "tslint": "^5.1.0",
+    "typescript": "^2.4.1",
+    "uglify-es": "^3.0.4"
+  },
+  "homepage": "https://github.com/vsternbach/angular-ts-decorators",
+  "jsnext:main": "angular-ts-decorators.js",
+  "keywords": [
+    "angular decorators",
+    "angular-decorators",
+    "typescript decorators",
+    "typescript-decorators",
+    "decorators",
+    "angular ts decorators",
+    "angular-ts-decorators",
+    "angular typescript decorators",
+    "angular-typescript-decorators",
+    "anguarjs decorators",
+    "anguarjs-decorators"
+  ],
+  "license": "MIT",
+  "main": "angular-ts-decorators.umd.js",
+  "module": "angular-ts-decorators.js",
+  "name": "angular-ts-decorators",
+  "peerDependencies": {
+    "angular": ">=1.5.0",
+    "typescript": ">=2.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vsternbach/angular-ts-decorators.git"
+  },
+  "scripts": {
+    "build": "npm run clean && tsc && rollup -c && npm run uglify && copyfiles package.json README.md CHANGELOG.md LICENSE dist/ && rimraf dist/temp",
+    "clean": "rimraf dist coverage",
+    "postrelease": "git push origin master --follow-tags",
+    "posttest": "cat ./coverage/lcov.info | coveralls",
+    "release": "standard-version",
+    "test": "karma start --single-run",
+    "test:dev": "karma start",
+    "uglify": "for f in dist/*.js; do ./node_modules/uglify-es/bin/uglifyjs $f --compress drop_console --mangle --output ${f%.js}.min.js; done"
+  },
+  "types": "types/index.d.ts",
+  "version": "1.2.5"
+}
